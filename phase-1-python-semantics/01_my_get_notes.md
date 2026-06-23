@@ -16,7 +16,7 @@ def my_get(d, key, default=None):
         return d[key]
     else:
         return default
-
+```
 State Model
 If key exists:
 read key existence
@@ -51,14 +51,14 @@ but default_list does not enter d
 
 Mistake I Made
 My first wrong version:
-
+```python
 def my_get(d, key, default=None):
     if key in d:
         return d[key]
     else:
         d[key] = default
         return d[key]
-
+```
 This was wrong because it mutated the dictionary when the key was missing.
 That behavior is closer to setdefault, not get.
 
